@@ -1,14 +1,24 @@
-const a = 1;
-const b = 1;
+const a = NaN;
+const b = NaN;
 let result;
 
 const strictEquals = function(a,b) {
+   
+  if (Number.isNaN(a) && Number.isNaN(b)) {
+    return false
+  }
+
   if (Object.is(a,b)) {
     return true
-  }  
+  } 
+  
 }
 
 strictEquals();
+
+console.log(strictEquals(1,1));
+console.log(strictEquals(NaN,NaN));
+
 
 
 
