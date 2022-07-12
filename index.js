@@ -1,14 +1,14 @@
 
 const strictEquals = function(a,b) {
    
-  // // if (Number.isNaN(a) && Number.isNaN(b)) {
-  // //   return false
-  // // }
+if (Number.isNaN(a) && Number.isNaN(b)) {
+   return false
+ }
  
 
-  // // if(!a && !b) {
-  // //   return true
-  // }
+ if(!a && !b) {
+     return true
+}
 
   if (Object.is(a,b)) {
     return true
@@ -31,12 +31,3 @@ console.log(strictEquals("Water", "oil"));
 
 
 
-// A	B	RESULT	
-// 1	1	true	
-// NaN	NaN	false	// Rule Exception
-// 0	-0	true	// Rule Exception
-// -0	0	true	// Rule Exception
-// 1	"1"	false	
-// true	false	false	
-// false	false	true	
-// "Water"	"oil"	false	
