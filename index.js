@@ -1,6 +1,3 @@
-const a = NaN;
-const b = NaN;
-let result;
 
 const strictEquals = function(a,b) {
    
@@ -10,14 +7,23 @@ const strictEquals = function(a,b) {
 
   if (Object.is(a,b)) {
     return true
-  } 
-  
+  }   
+
+  if(!a && !b) {
+    return true
+  }
+
+  if(a && b) {
+    return false
+  }
 }
 
 strictEquals();
 
 console.log(strictEquals(1,1));
 console.log(strictEquals(NaN,NaN));
+console.log(strictEquals(-0,0));
+console.log(strictEquals(1,'1'));
 
 
 
